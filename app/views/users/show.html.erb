@@ -1,1 +1,49 @@
-<h1>a</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+		   
+           <h2>User info</h2>
+           	<%= attachment_image_tag @user,:profile_image, :fill, 100,100, format:'jpeg', fallback: "no_image.jpg" %>
+            <table class="table">
+            	<tbody>
+            		<tr>
+            			<th>name</<th>
+            			<th><%= @user.name %></th>
+            		</tr>
+            		<tr>
+            			<th>introduction</th>
+            			<th><%= @user.introduction %></th>
+            		</tr>
+            	</tbody>
+            </table>
+
+            <%= link_to "", edit_user_path(@user.id), class: "btn btn-default  btn-block glyphicon glyphicon-wrench" %>
+
+        </div>
+        <div class="col-md-9">
+        	<h2>Books</h2>
+        	  <table class="table table-hover">
+        	  	<thead>
+        	  		<tr>
+        	  			<th></th>
+        	  			<th>Title</th>
+        	  			<th>Opinion</th>
+        	  		</tr>
+        	  	</thead>
+        	  	<tbody>
+        	  		<tr>
+        	  			<td>
+        	  				<p>[ユーザ投稿に関連するユーザの画像]</p>
+        	  			</td>
+        	  			<td>
+        	  				<p>[ユーザが投稿した本のタイトル]</p>
+        	  			</td>
+        	  			<td>
+        	  				<p>[ユーザが投稿した本の感想]</p>
+        	  			</td>
+        	  		</tr>
+        	  	</tbody>
+        	  </table>
+        </div>
+    </div>
+</div>

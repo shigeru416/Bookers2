@@ -1,0 +1,14 @@
+<h1>New book<hi>
+	<%= form_for(@book) do |f| %>
+	 <div class="form-group">
+	 	<%= f.label :title %>
+	 	<%= f.text_field :title, autofocus: true, class: "form-control"%>
+	 </div>
+	 <div class="form-group">
+	 	<%= f.label :opinion %>
+	 	<%= f.text_field :body, autofocus: true, class: "form-control"%>
+	 </div>
+	 <div class="action">
+	 	<%= f.submit "Create Book", class: "btn btn-blok btn-primary" %>
+	 </div>
+	<% end %>

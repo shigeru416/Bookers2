@@ -15,3 +15,26 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+body{
+	padding-top:70px;
+}
+
+.nav-title{
+	color:white;
+	font-size:20px
+}
+
+.about-content{
+	margin-left:70px;
+}
+
+li{
+	font-size:13px;
+}

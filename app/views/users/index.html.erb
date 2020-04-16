@@ -2,8 +2,8 @@
 	<div class="row">
 		<div class="col-md-3">
 
-		   <%= render 'users/info', user: @user %>
-           <%= render 'books/new', book: @book %>
+		   <%= render 'users/info', user: @user_you %>
+           <%= render 'books/new', book: @post_book %>
 
         </div>
         <div class="col-md-9">
@@ -13,25 +13,26 @@
         	  		<tr>
         	  			<th>image</th>
         	  			<th>name</th>
-        	  			<th></th>
-        	  			<th></th>
         	  		</tr>
         	  	</thead>
-        	  	<tbody>
-        	  		<tr>
-        	  			<td>
-        	  				<p>[各ユーザ投稿に関連するユーザの画像]</p>
-        	  			</td>
-        	  			<td>
-        	  				<p>[各ユーザ名]</p>
-        	  			</td>
-        	  			<td>
-        	  			</td>
-        	  			<td>
-        	  				<p>[各ユーザの詳細ページに遷移するためのshow]</p>
-        	  			</td>
-        	  		</tr>
-        	  	</tbody>
+                <% @users.each do |user| %>
+            	  	<tbody>
+            	  		<tr>
+            	  			<td>
+            	  				<%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: 'no_image.png' %>
+            	  			</td>
+            	  			<td>
+            	  				<%= user.name %>
+            	  			</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+            	  			<td>
+            	  				<%= link_to "show", user_path(user.id) %>
+            	  			</td>
+            	  		</tr>
+            	  	</tbody>
+                <% end %>
         	  </table>
         </div>
     </div>

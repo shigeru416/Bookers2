@@ -25,13 +25,23 @@
             <% else %>
                 <li><%= link_to " Home", root_path, class: "home glyphicon glyphicon-home" %></li>
                 <li><%= link_to " About", home_about_path, class: "about glyphicon glyphicon-link" %></li>
-                <li><%= link_to " Sign up",new_user_registration_path, class: "sign_up glyphicon glyphicon-edit" %></li>
-                <li><%= link_to " Log in", new_user_session_path, class: "sign_in glyphicon glyphicon-log-in" %></li>
+                <li><%= link_to " sign up",new_user_registration_path, class: "sign_up glyphicon glyphicon-edit" %></li>
+                <li><%= link_to " login", new_user_session_path, class: "sign_in glyphicon glyphicon-log-in" %></li>
             <% end %>
           </ul>
         </div>
       </nav>
     </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <% flash.each do |key, value| %>
+                  <%= content_tag(:div, value, class: "#{key}") %>
+                <% end %>
+            </div>
+        </div>
+    </div>
 
     <%= yield %>
 

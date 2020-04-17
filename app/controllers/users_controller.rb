@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     	@user_you = current_user
     	@post_book = Book.new
     	@users = User.all
+    	@books = Book.all
     end
 
 	private

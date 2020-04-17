@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-xs-12">
             <p id="notice">
                 <%= notice %>
             </p>
@@ -20,13 +20,13 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-xs-3">
 
 		   <%= render 'users/info', user: @user_you %>
            <%= render 'books/new', book: @post_book %>
 
         </div>
-        <div class="col-md-9">
+        <div class="col-xs-9">
         	<h2>Books</h2>
         	  <table class="table table-hover">
         	  	<thead>
@@ -46,7 +46,7 @@
             	  		<tr>
             	  			<td>
                                 <%= link_to user_path(book.user.id) do %>
-            	  				  <%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: 'no_image.png' %>
+            	  				  <%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: 'no_image.jpg', size: '50x50' %>
                                 <% end %>
             	  			</td>
             	  			<td>

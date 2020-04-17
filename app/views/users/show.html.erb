@@ -1,7 +1,17 @@
 <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p id="notice">
+                <%= notice %>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
 	<div class="row">
 		<div class="col-md-3">
-            
+
 		   <%= render 'users/info', user: @user %>
            <%= render 'books/new', book: @book %>
 

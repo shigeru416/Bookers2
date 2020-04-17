@@ -1,4 +1,14 @@
 <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p id="notice">
+                <%= notice %>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
 	<div class="row">
 		<div class="col-md-3">
 
@@ -24,10 +34,14 @@
                             <%= @book.body %>
         	  			</td>
         	  			<td>
-        	  				<%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-success btn-xs" %>
+                            <% if current_user.id == @user.id %>
+        	  				   <%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-success btn-xs" %>
+                            <% end %>
         	  			</td>
                         <td>
-                            <%= link_to "Destroy", book_path(@book.id), class: "btn btn-danger btn-xs", method: :delete %>
+                            <% if current_user.id == @user.id %>
+                               <%= link_to "Destroy", book_path(@book.id), class: "btn btn-danger btn-xs", method: :delete %>
+                            <% end %>
                         </td>
         	  		</tr>
         	  	</tbody>

@@ -1,4 +1,24 @@
 <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p id="notice">
+                <%= notice %>
+            </p>
+            <% if @post_book.errors.any? %>
+             <div id="error_explanation">
+              <h2><%= @post_book.errors.count %>errors prohibted this book from being saved:</h2>
+                <ul>
+                 <% @post_book.errors.full_messages.each do |message| %>
+                 <li><%= message %></li>
+                 <% end %>
+                </ul>
+             </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="container">
 	<div class="row">
 		<div class="col-md-3">
 

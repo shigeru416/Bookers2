@@ -35,14 +35,14 @@ body{
 	margin-left:70px;
 }
 
-li{
+ul{
 	font-size:13px;
 }
 
-.notice {
-  color: green;
+#error_explanation{
+	color:red;
 }
 
-.alert {
-  color: green;
+#notice{
+	color:green;
 }
